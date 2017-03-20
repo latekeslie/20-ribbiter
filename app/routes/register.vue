@@ -26,6 +26,9 @@
 </template>
 
 <script>
+import store from '../store';
+import userResource from '../resources/user';
+
 export default {
   data() {
     return {
@@ -44,8 +47,9 @@ export default {
 
       store.dispatch(create(formData)).then(() => {
         this.$router.push({ name: 'users' });
+        //this.$router.push({ name:'/login' });
       }).catch((error) => {
-        throw new Error(error)
+        // throw new Error(error)
       });
     },
   }
